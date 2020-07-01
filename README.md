@@ -10,7 +10,8 @@ A new Flutter application.
 Functionalities 
 
 Check the current time
-check the Current temperature, max and min temperature, sunset, sunrise
+
+check the Current temperature, max and min temperature, sunset, sunrise, humidity, wind speed
 Custom icons for each weather condition
 check 7 day forecast
 Check the current weather condition in different places around the world
