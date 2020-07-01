@@ -3,7 +3,7 @@
 A new Flutter application.
 
 ## Getting Started
-
+ 
 Functionalities 
 
 Check the current time
