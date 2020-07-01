@@ -28,15 +28,15 @@ class Weather{
     List<Weather> weatherForecast;
     List<Weather> weatherHourly ;
     List<Weather> countryWeathers;
-
+    
     Weather({this.id, this.city, this.cityId, this.country, this.clouds, this.cod, this.lat, this.lon, this.temperature, this.visibility,this.weatherData,
        this.wind, this.dateShortFormatted, this.dateFullFormatted,this.day, this.timezone,this.weatherForecast,this.weatherHourly
     });
 
-
+    final String openWeatherMapToken = "";
   Future<void> initialize() async{
       try{
-        Response response = await get('http://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&units=metric&appid=2b557cc4c291a6293e22bc44e49231d8');
+        Response response = await get('http://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&units=metric&appid=$openWeatherMapToken');
         if (response.statusCode == 200) {
           // If the server did return a 200 OK response,
           Map data  = jsonDecode(response.body);
@@ -108,7 +108,7 @@ class Weather{
 
     Future<void> getCityWeather(lat, lon) async{
       try{
-        Response response = await get('https://api.openweathermap.org/data/2.5/onecall?lat=$lat&lon=$lon&units=metric&appid=2b557cc4c291a6293e22bc44e49231d8');
+        Response response = await get('https://api.openweathermap.org/data/2.5/onecall?lat=$lat&lon=$lon&units=metric&appid=$openWeatherMapToken');
         Map data  = jsonDecode(response.body);
         getHourlyData(data);
         List<Weather> weathers = [];
@@ -171,7 +171,7 @@ class Weather{
     // ignore: missing_return
     Future<Weather> getCountryWeathers(Map data) async {
       try {
-        Response response = await get('http://api.openweathermap.org/data/2.5/weather?lat=${data['lat']}&lon=${data['lng']}&units=metric&appid=2b557cc4c291a6293e22bc44e49231d8');
+        Response response = await get('http://api.openweathermap.org/data/2.5/weather?lat=${data['lat']}&lon=${data['lng']}&units=metric&appid=$openWeatherMapToken');
         if (response.statusCode == 200) {
           // If the server did return a 200 OK response,
           Map newData = jsonDecode(response.body);
@@ -205,7 +205,7 @@ class Weather{
 
     Future<void> getWeather() async{
       try{
-        Response response = await get('http://api.openweathermap.org/data/2.5/weather?city=$city&units=metric&appid=2b557cc4c291a6293e22bc44e49231d8');
+        Response response = await get('http://api.openweathermap.org/data/2.5/weather?city=$city&units=metric&appid=$openWeatherMapToken');
         if (response.statusCode == 200) {
           // If the server did return a 200 OK response,
           Map data  = jsonDecode(response.body);
