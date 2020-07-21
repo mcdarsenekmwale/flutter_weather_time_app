@@ -40,6 +40,7 @@
  _Flutter_
 
 **Installing**
+
  **API Key**
 
-With your openweathermaps API key in it. here [https://openweathermap.org/api](url)
+Get your openweathermaps API key in it. here [https://openweathermap.org/api](url)
