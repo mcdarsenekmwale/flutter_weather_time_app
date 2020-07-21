@@ -3,7 +3,7 @@
 
  ### FLUTTER WEATHER TIME APP
  
-`<img src="https://user-images.githubusercontent.com/30800758/88087580-b8532100-cbbb-11ea-953c-52074b00719e.jpg" height="100" width="100">`
+<img src="https://user-images.githubusercontent.com/30800758/88087580-b8532100-cbbb-11ea-953c-52074b00719e.jpg" height="100" width="100">
 ![WeChat Image_20200701150148](https://user-images.githubusercontent.com/30800758/88087586-b9844e00-cbbb-11ea-9266-41083626152c.jpg)
 ![WeChat Image_20200701150153](https://user-images.githubusercontent.com/30800758/88087587-ba1ce480-cbbb-11ea-9838-9c14c47046d1.jpg)
 ![WeChat Image_20200701150157](https://user-images.githubusercontent.com/30800758/88087588-bab57b00-cbbb-11ea-811e-dd5bcee16d1d.jpg)
