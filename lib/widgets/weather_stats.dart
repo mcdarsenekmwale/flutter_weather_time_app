@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:osappw/services/weather.dart';
 import 'package:osappw/widgets/weather_icon.dart';
@@ -31,13 +32,17 @@ class WeatherStatsWidget extends StatelessWidget {
                 Colors.white.withOpacity(0.1)
               ])
         ),
-        child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context,  index){
-              return builderContainers(weather.elementAt(index), index, context);
-            },
-          itemCount: weather.length,
-            ),
+        child: Stack(
+          children: <Widget>[
+            ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context,  index){
+                  return builderContainers(weather.elementAt(index), index, context);
+                },
+              itemCount: weather.length,
+                ),
+          ],
+        ),
       ),
     );
   }
@@ -79,21 +84,21 @@ class WeatherStatsWidget extends StatelessWidget {
                     width: 10.0,
                     decoration: BoxDecoration(
                       color: Theme.of(context).primaryColor,
-                      borderRadius: BorderRadius.circular(5.0)
+                     shape: BoxShape.circle
                     ),
                   ),
                 ],
               ),
             ),
             CustomPaint(
-              size: Size.infinite,
-              painter: 0 < index && index < weather.length ?
-              LinesPainter(
-                  Offset(-30.0, (104-(weather.elementAt(index-1).temperature.tempCurrent-2)).toDouble()),
-                  Offset(22.0*1.5, (104-(data.temperature.tempCurrent -2)).toDouble()),
-                  Theme.of(context).primaryColor.withOpacity(0.5)
-              )
-                  : null
+                size: Size.infinite,
+                painter: 0 < index && index < weather.length ?
+                LinesPainter(
+                    start:  (92.0-(weather.elementAt(index-1).temperature.tempCurrent ).toDouble()),
+                    end: (92.0-(data.temperature.tempCurrent ).toDouble()),
+                    color:  Theme.of(context).primaryColor.withOpacity(0.5)
+                )
+                    : null
             ),
             Positioned(
               bottom: 50.0,
